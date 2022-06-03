@@ -42,9 +42,9 @@ APPROVED = environ.get("APPROVED_WELCOME", "on").lower()
 @pr0fess0r_99.on_message(filters.private & filters.command(["start"]))
 async def start(client: pr0fess0r_99, message: Message):
     approvedbot = await client.get_me() 
-    button = [[ InlineKeyboardButton("ᴏɴᴡᴇʀ", url="https://t.me/basildmx"), InlineKeyboardButton("ʙᴏᴛ ᴜᴩᴅᴀᴛᴇꜱ", url="https://t.me/dmx_bots") ],
-              [ InlineKeyboardButton("ɢʀᴏᴜᴩ", url=f"https://t.me+dmx_chating") ]]
-    await client.send_message(chat_id=message.chat.id, text=f"**__Hello {message.from_user.mention} Iam Auto Approver Join Request Bot  ||**__", reply_markup=InlineKeyboardMarkup(button), disable_web_page_preview=True)
+    button = [[ InlineKeyboardButton("📦 Repo", url="https://github.com/PR0FESS0R-99/Auto-Approved-Bot"), InlineKeyboardButton("Updates 📢", url="t.me/Mo_Tech_YT") ],
+              [ InlineKeyboardButton("➕️ Add Me To Your Chat ➕️", url=f"http://t.me/{approvedbot.username}?startgroup=botstart") ]]
+    await client.send_message(chat_id=message.chat.id, text=f"**__Hello {message.from_user.mention} Iam Auto Approver Join Request Bot Just [Add Me To Your Group Channnl](http://t.me/{approvedbot.username}?startgroup=botstart) || Repo https://github.com/PR0FESS0R-99/Auto-Approved-Bot||**__", reply_markup=InlineKeyboardMarkup(button), disable_web_page_preview=True)
 
 @pr0fess0r_99.on_chat_join_request(filters.group & filters.chat(CHAT_ID) if CHAT_ID else filters.group)
 async def autoapprove(client: pr0fess0r_99, message: ChatJoinRequest):
